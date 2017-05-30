@@ -9,7 +9,7 @@ RUN /usr/sbin/a2dissite '*' && /usr/sbin/a2ensite 000-phalcon 001-phalcon-ssl
 
 WORKDIR /tmp
 # Run build process on one line to avoid generating bloat via intermediate images
-RUN /usr/bin/apt-get update && apt-get -y install git build-essential curl php5-xdebug php5-dev php5-curl php5-mysqlnd php5-cli php5-gd imagemagick php5-imagick php5-mcrypt php5-intl libpcre3-dev gcc make && \
+RUN /usr/bin/apt-get update && apt-get -y install git build-essential curl php-xdebug php7.0-dev php-curl php7.0 php7.0-fpm php7.0-mysql php7.0-mysqlnd php7.0-gd imagemagick php-imagick php7.0-mcrypt php7.0-intl libpcre3-dev gcc make && \
     /usr/bin/git clone --branch v3.1.2 --depth=1 git://github.com/phalcon/cphalcon.git && \
     cd cphalcon/build/ && \
     ./install && \
